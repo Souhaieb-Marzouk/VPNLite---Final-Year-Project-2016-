@@ -1,0 +1,16 @@
+traceroute to www.flickr.com (87.248.114.11), 30 hops max, 60 byte packets
+ 1  192.168.0.1 (192.168.0.1)  2.943 ms  5.035 ms  5.043 ms
+ 2  192.168.1.1 (192.168.1.1)  8.620 ms  21.908 ms  22.455 ms
+ 3  41.226.21.222 (41.226.21.222)  41.578 ms  41.791 ms  43.060 ms
+ 4  172.26.0.9 (172.26.0.9)  54.592 ms  55.788 ms  56.219 ms
+ 5  193.95.19.69 (193.95.19.69)  58.884 ms  59.481 ms  59.556 ms
+ 6  193.95.96.147 (193.95.96.147)  59.774 ms  36.408 ms  51.773 ms
+ 7  193.95.1.13 (193.95.1.13)  51.916 ms  52.001 ms  55.996 ms
+ 8  te0-13-0-1.palermo16.pal.seabone.net (195.22.198.102)  63.254 ms pos0-0-0-0.palermo16.pal.seabone.net (195.22.197.213)  63.265 ms pos0-0-1-0.palermo16.pal.seabone.net (195.22.197.176)  66.666 ms
+ 9  et5-1-0.franco31.fra.seabone.net (195.22.214.88)  124.658 ms  124.444 ms  124.455 ms
+10  ge-1-3-0.pat2.dee.yahoo.com (80.81.193.115)  131.447 ms  131.200 ms  131.450 ms
+11  UNKNOWN-66-196-65-X.yahoo.com (66.196.65.220)  138.889 ms  139.099 ms  138.837 ms
+12  ge-5-2-0.pat1.the.yahoo.com (66.196.65.212)  96.111 ms ge-5-2-0.pat1.tc2.yahoo.com (66.196.65.214)  88.186 ms  89.858 ms
+13  et34.bas2-1-edg.lob.yahoo.com (66.196.67.145)  91.412 ms et31.bas2-1-edg.lob.yahoo.com (66.196.67.151)  93.429 ms et35.bas3-1-edg.lob.yahoo.com (66.196.67.155)  94.865 ms
+14  * et32.usw1-1-edg.lob.yahoo.com (87.248.112.61)  108.028 ms et35.usw2-1-edg.lob.yahoo.com (87.248.112.47)  108.275 ms
+15  e1.ycpi.vip.lob.yahoo.com (87.248.114.11)  111.580 ms  112.682 ms  113.312 ms

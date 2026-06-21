@@ -1,0 +1,13 @@
+openswan					install
+xl2tpd						install
+ppp						install
+iperf						install
+ftp						install
+nmap						install
+libgnutls-openssl27:amd64			install
+openssl						install
+python-openssl					install
+libsnmp-base					install
+libsnmp30:amd64					install
+php5-snmp					install
+snmp						install

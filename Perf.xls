@@ -1,0 +1,13 @@
+------------------------------------------------------------
+Client connecting to 10.150.14.51, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.1.4 port 56867 connected with 10.150.14.51 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 1.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  3]  1.0- 2.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  3]  2.0- 3.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  3]  3.0- 4.0 sec  9.75 MBytes  81.8 Mbits/sec
+[  3]  4.0- 5.0 sec  8.00 MBytes  67.1 Mbits/sec
+[  3]  0.0- 5.1 sec  43.9 MBytes  72.7 Mbits/sec
+

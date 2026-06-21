@@ -1,0 +1,236 @@
+# ============================================================================
+# VPNLite — .gitignore
+# Java 8 + JavaFX + NetBeans (Ant) project, Linux gateway target
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# NetBeans
+# ----------------------------------------------------------------------------
+nbproject/private/
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/platform.properties
+nbproject/jnlp-impl.xml
+nbproject/jnlp-impl.xml.bak
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+*.nbm
+*.nocache
+build.number
+
+# ----------------------------------------------------------------------------
+# Java — compiled output
+# ----------------------------------------------------------------------------
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# Maven (in case the project is ever ported to Maven)
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle (in case the project is ever ported to Gradle)
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# ----------------------------------------------------------------------------
+# JavaFX packaging output
+# ----------------------------------------------------------------------------
+*.jfx.jar
+*.jfx.zip
+bundles/
+deploy/
+
+# ----------------------------------------------------------------------------
+# JVM crash logs & heap dumps
+# ----------------------------------------------------------------------------
+*.hprof
+*.dump
+*.dumpstream
+
+# ----------------------------------------------------------------------------
+# Other IDEs — IntelliJ IDEA
+# ----------------------------------------------------------------------------
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ----------------------------------------------------------------------------
+# Other IDEs — Eclipse
+# ----------------------------------------------------------------------------
+.metadata
+.classpath
+.project
+.settings/
+.factorypath
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders/
+
+# ----------------------------------------------------------------------------
+# Other IDEs — VS Code
+# ----------------------------------------------------------------------------
+.vscode/
+*.code-workspace
+.history/
+
+# ----------------------------------------------------------------------------
+# OS — Linux
+# ----------------------------------------------------------------------------
+.DS_Store?
+._*
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ----------------------------------------------------------------------------
+# OS — macOS
+# ----------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# ----------------------------------------------------------------------------
+# OS — Windows
+# ----------------------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+Desktop.ini
+$RECYCLE.BIN/
+
+# ----------------------------------------------------------------------------
+# VPNLite-specific — secrets & local config (DO NOT COMMIT)
+# ----------------------------------------------------------------------------
+# Local environment overrides (real IPs, real passwords, real keys)
+.env
+.env.local
+.env.*.local
+*.local
+config.local
+config.local.*
+secrets.properties
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+known_hosts
+authorized_keys
+.ipsec.secrets
+xl2tpd.secrets
+chap-secrets
+ppp/chap-secrets
+ppp/pap-secrets
+
+# ----------------------------------------------------------------------------
+# VPNLite-specific — generated shell scripts
+# ----------------------------------------------------------------------------
+# VPNLite writes generated scripts to /usr/local/bin on the gateway.
+# When testing locally, scripts may land in these dirs — never commit them.
+generated-scripts/
+generated/
+usr/local/bin/
+*.generated.sh
+*.gen.sh
+
+# ----------------------------------------------------------------------------
+# VPNLite-specific — test captures & exports
+# ----------------------------------------------------------------------------
+captures/
+*.pcap
+*.pcapng
+*.cap
+captures-*/
+test-results/
+test-output/
+results/
+exports/
+*.log
+logs/
+iperf3-*.json
+iperf3-*.txt
+ping-*.txt
+traceroute-*.txt
+
+# ----------------------------------------------------------------------------
+# VPNLite-specific — VM & gateway images
+# ----------------------------------------------------------------------------
+*.vmdk
+*.vdi
+*.vhd
+*.img
+*.iso
+*.qcow2
+*.ova
+*.ovf
+gateway-image/
+vm-image/
+
+# ----------------------------------------------------------------------------
+# Documentation & temp build artifacts
+# ----------------------------------------------------------------------------
+*.aux
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.out
+*.bbl
+*.blg
+~$*
+*.tmp.pdf
+
+# ----------------------------------------------------------------------------
+# Misc
+# ----------------------------------------------------------------------------
+.cache/
+.pytest_cache/
+coverage/
+.coverage
+htmlcov/
+.tox/
+node_modules/        # in case any tooling pulls in JS deps later
+.eslintcache

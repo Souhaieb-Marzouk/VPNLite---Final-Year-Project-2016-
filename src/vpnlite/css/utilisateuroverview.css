@@ -1,0 +1,25 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-image: url("../img/backgroundApp.png");
+}
+/*
+#user-interface{
+    -fx-background-image: url("../img/background.jpg");
+}
+*//*
+.title-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}*/
+/*
+#title-label {
+   -fx-font-size: 20px;
+   -fx-font-family: "Bodoni MT";
+   -fx-fill: firebrick;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}*/

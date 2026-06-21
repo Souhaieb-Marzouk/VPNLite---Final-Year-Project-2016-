@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" stylesheets="@../css/softwareoverview.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vpnlite.controller.SoftwareOverviewController">
+   <children>
+      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.columnIndex="7" GridPane.rowSpan="2147483647" />
+            <HBox fx:id="list1" alignment="CENTER" spacing="10.0" GridPane.columnSpan="7" GridPane.rowSpan="2147483647">
+               <children>
+                  <VBox alignment="CENTER_RIGHT" prefWidth="400.0" spacing="50.0">
+                     <children>
+                        <ImageView fx:id="testingtoolImg" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#testingtoolundisplay" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/TestingTools.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="ipsecl2tpImg" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#ipsecl2tpundisplay" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/vpn.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="pppfamilyImg" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#pppfamilyundisplay" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/vpn2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefWidth="500.0" spacing="60.0">
+                     <children>
+                        <Label fx:id="testingtoolLabel" onMouseClicked="#testingtooldisplay" prefHeight="40.0" prefWidth="200.0" text="Testing Tools">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Label>
+                        <Label fx:id="ipsecl2tpLabel" onMouseClicked="#ipsecl2tpdisplay" prefHeight="40.0" prefWidth="200.0" text="IPSec &amp; L2TP">
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Label>
+                        <Label fx:id="pppfamilyLabel" onMouseClicked="#pppfamilydisplay" prefHeight="40.0" prefWidth="200.0" text="PPP &amp; PPPoE &amp; PPTP">
+                           <effect>
+                              <Glow />
+                           </effect>
+                           <font>
+                              <Font name="Comic Sans MS Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <VBox fx:id="list2" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="70.0" GridPane.columnIndex="7" GridPane.rowSpan="2147483647">
+               <children>
+                  <ImageView fx:id="testingarrow" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/testingarrow.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ipsecl2tparrow" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../img/ipsecarrow.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="pppfamilyarrow" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../img/ppparrow.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <AnchorPane fx:id="ipsecl2tpWindow" visible="false" GridPane.columnIndex="8" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+               <children>
+                  <VBox alignment="CENTER_LEFT" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="openswanLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Openswan" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="openswaninstallField" onAction="#installUninstallOpenswan" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Xl2tpd" textAlignment="CENTER" fx:id="xl2tpdLabel">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton onAction="#installUninstallXl2tpd" prefWidth="200.0" text="Uninstalled" fx:id="xl2tpdinstallField" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="ipsecpppLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="PPP" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="ipsecpppinstallField" onAction="#installUninstallPPP" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="lsofLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Lsof" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="lsofinstallField" onAction="#installUninstallLsof" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="strongswanLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Strongswan" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="strongswaninstallField" onAction="#installUninstallStrongswan" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane fx:id="testingtoolWindow" GridPane.columnIndex="8" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+               <children>
+                  <VBox fx:id="testToolsFields" alignment="CENTER_LEFT" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefWidth="1000.0">
+                                 <children>
+                                    <Label fx:id="iperf3Label" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="IPerf 3" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="iperf3installField" onAction="#installUninstallIperf3" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefWidth="1000.0">
+                                 <children>
+                                    <Label fx:id="iperfLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Ethtool">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="iperfinstallField" onAction="#installUninstallIperf" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefWidth="1000.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label fx:id="nmapLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="NMAP" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="nmapinstallField" onAction="#installUninstallNmap" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefWidth="1000.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label fx:id="ftpLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="FTP" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="ftpinstallField" onAction="#installUninstallFTP" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefWidth="1000.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label fx:id="snmpLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="SNMP" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="snmpinstallField" onAction="#installUninstallSnmp" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefWidth="1000.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label fx:id="dnsutilsLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="DNSUtils" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="dsnutilsinstallField" onAction="#installUninstallDNSUtils" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefWidth="1000.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label fx:id="tracerouteLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Traceroute" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="tracerouteinstallField" onAction="#installUninstallTraceroute" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefWidth="1000.0">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <children>
+                                    <Label fx:id="wiresharkLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="Wireshark" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="wiresharkinstallField" onAction="#installUninstallWireshark" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane fx:id="pppfamilyWindow" prefHeight="200.0" prefWidth="200.0" visible="false" GridPane.columnIndex="8" GridPane.columnSpan="2147483647" GridPane.rowSpan="2147483647">
+               <children>
+                  <VBox fx:id="ppppppoepptpFields" alignment="CENTER_LEFT" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="pppdLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="PPPd" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="pppdinstallField" onAction="#installUninstallPPPd" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="pppoeconfLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="PPPoEConf" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="pppoeconfinstallField" onAction="#installUninstallPPPoEConf" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="pptpLabel" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="PPTP" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Comic Sans MS Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXToggleButton fx:id="pptpinstallField" onAction="#installUninstallPPTP" prefWidth="200.0" text="Uninstalled" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="updateButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#updateSoft" prefHeight="30.0" prefWidth="200.0" text="Update" GridPane.columnIndex="17" GridPane.columnSpan="2" GridPane.rowIndex="18">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="previousButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" onAction="#previousPage" prefHeight="30.0" prefWidth="200.0" text="Main Page" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="18">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <ProgressBar fx:id="installationprogressBar" prefHeight="20.0" prefWidth="1000.0" visible="false" GridPane.columnIndex="7" GridPane.columnSpan="6" GridPane.rowIndex="18" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
