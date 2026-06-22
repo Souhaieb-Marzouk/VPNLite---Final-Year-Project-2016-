@@ -1,9 +1,9 @@
 # VPNLite
 
-> A desktop application for **configuring VPNs and running network tests** across a two-PC Linux test bench — built in 2017 as an engineering final-year project at ESPIRT in partnership with Sagemcom.
+> A desktop application for **configuring VPNs and running network tests** across a two-PC Linux test bench, built in 2016 as an engineering final-year project at ESPIRT in partnership with Sagemcom.
 
 <p align="center">
-  <img src="vpnlite-cover.png" alt="VPNLite — original 2017 project cover" width="720">
+  <img src="vpnlite-cover.png" alt="VPNLite, original 2016 project cover" width="720">
 </p>
 
 <p align="center">
@@ -15,30 +15,30 @@
 
 ## Overview
 
-**VPNLite** is a JavaFX desktop application that lets a network engineer **configure different types of VPN** between two Linux PCs and then **perform different types of tests** against the resulting tunnel — all from a single GUI, without ever dropping into a shell.
+**VPNLite** is a JavaFX desktop application that lets a network engineer **configure different types of VPN** between two Linux PCs and then **perform different types of tests** against the resulting tunnel, all from a single GUI, without ever dropping into a shell.
 
 The two-PC test bench mirrors a real customer deployment:
 
-- **The Client PC** — a Linux workstation connected to the **Sagemcom gateway** on its LAN side. It plays the role of the roaming/branch user.
-- **The Server PC** — a Linux workstation situated on the **WAN**, behind the operator network. It plays the role of the enterprise server the client is trying to reach.
+- **The Client PC**, a Linux workstation connected to the **Sagemcom gateway** on its LAN side. It plays the role of the roaming/branch user.
+- **The Server PC**, a Linux workstation situated on the **WAN**, behind the operator network. It plays the role of the enterprise server the client is trying to reach.
 
 The engineer installs VPNLite on **both PCs**. From the same GUI on either side, the engineer can:
 
 1. **Configure the VPN** on the gateway and on the two endpoints, by walking through a wizard (pick protocol → fill in network parameters → validate → deploy).
-2. **Run the tests** needed to validate the tunnel — connectivity (Ping), bandwidth (iPerf3 in both directions), packet capture (Wireshark with protocol-aware filters), etc.
+2. **Run the tests** needed to validate the tunnel, connectivity (Ping), bandwidth (iPerf3 in both directions), packet capture (Wireshark with protocol-aware filters), etc.
 3. **Generate a detailed test report** that the engineer can drop straight into the final report handed to their manager.
 
-VPNLite generates the corresponding shell scripts, pushes them to `/usr/local/bin` on the gateway, brings the tunnel up, runs the test suite, and collects the results — all driven from the application GUI.
+VPNLite generates the corresponding shell scripts, pushes them to `/usr/local/bin` on the gateway, brings the tunnel up, runs the test suite, and collects the results, all driven from the application GUI.
 
-The project was built in 2017 by **Souhaieb Marzouk** as a *Projet de Fin d'Études* (engineering final-year project) for the *Diplôme National d'Ingénieur* in Computer Science at **ESPIRT** (École Supérieure Privée d'Ingénierie et de Technologies, Tunisia), in industry partnership with **Sagemcom**.
+The project was built in 2016 by **Souhaieb Marzouk** as a *Projet de Fin d'Études* (engineering final-year project) for the *Diplôme National d'Ingénieur* in Computer Science at **ESPIRT** (École Supérieure Privée d'Ingénierie et de Technologies, Tunisia), in industry partnership with **Sagemcom**.
 
-> ⚠️ **Status: archived.** This repository preserves the original 2017 codebase for reference and retrospective purposes. It is not actively maintained and the dependencies (Java 1.8, JavaFX, NetBeans project files) reflect the 2017 toolchain.
+> ⚠️ **Status: archived.** This repository preserves the original 2016 codebase for reference and retrospective purposes. It is not actively maintained and the dependencies (Java 1.8, JavaFX, NetBeans project files) reflect the 2016 toolchain.
 
 ---
 
 ## The Two-PC Test Bench
 
-VPNLite is designed around a **two-PC test bench** that reproduces a real customer deployment in the lab. The engineer uses the same VPNLite application on both PCs — one running the client side of the tunnel, the other running the server side.
+VPNLite is designed around a **two-PC test bench** that reproduces a real customer deployment in the lab. The engineer uses the same VPNLite application on both PCs, one running the client side of the tunnel, the other running the server side.
 
 ```
                           Sagemcom Gateway
@@ -51,9 +51,9 @@ VPNLite is designed around a **two-PC test bench** that reproduces a real custom
                 ▼                                ▼
    ┌────────────────────────┐         ┌────────────────────────┐
    │  CLIENT PC (Linux)     │         │  SERVER PC (Linux)     │
-   │  — runs VPNLite        │         │  — runs VPNLite        │
-   │  — plays VPN client    │         │  — plays VPN server    │
-   │  — local end of tunnel │         │  — remote end of tunnel│
+   │ , runs VPNLite        │         │ , runs VPNLite        │
+   │ , plays VPN client    │         │ , plays VPN server    │
+   │ , local end of tunnel │         │ , remote end of tunnel│
    └────────────────────────┘         └────────────────────────┘
                 ▲                                ▲
                 │                                │
@@ -65,8 +65,8 @@ VPNLite is designed around a **two-PC test bench** that reproduces a real custom
 
 Because the question *"is the VPN working?"* has two halves:
 
-1. **Client → Server** — can the roaming client reach the enterprise server through the tunnel?
-2. **Server → Client** — can the enterprise server push traffic back through the tunnel to the roaming client?
+1. **Client → Server**, can the roaming client reach the enterprise server through the tunnel?
+2. **Server → Client**, can the enterprise server push traffic back through the tunnel to the roaming client?
 
 These are not symmetric. Asymmetric routing, NAT, MTU mismatches, and firewall rules routinely break one direction while the other works fine. VPNLite drives the test suite from **both ends** so the engineer doesn't have to.
 
@@ -79,29 +79,29 @@ iPerf3 has a strict client/server model: the *client* sends, the *server* listen
 | **Run 1** | Client PC | Server PC | Throughput from the roaming client to the enterprise server (the typical "user downloads" direction). |
 | **Run 2** | Server PC | Client PC | Throughput from the enterprise server back to the roaming client (the "user uploads" / "server pushes data" direction). |
 
-VPNLite orchestrates both runs from the same GUI. The engineer selects the direction, and VPNLite automatically starts the iPerf3 listener on the correct PC, launches the iPerf3 client on the other, waits for the result, and stores it. **The engineer never has to SSH into the Server PC and run `iperf3 -s` manually** — the GUI handles role swapping for them.
+VPNLite orchestrates both runs from the same GUI. The engineer selects the direction, and VPNLite automatically starts the iPerf3 listener on the correct PC, launches the iPerf3 client on the other, waits for the result, and stores it. **The engineer never has to SSH into the Server PC and run `iperf3 -s` manually**, the GUI handles role swapping for them.
 
 This pattern applies to every test VPNLite runs:
 
-- **Ping** — VPNLite swaps source/destination between the two PCs to measure round-trip in both directions.
-- **iPerf3** — VPNLite swaps client/server roles (see table above).
-- **Traceroute** — VPNLite runs it from each PC so the engineer can compare the forward and reverse paths.
-- **Wireshark capture** — VPNLite starts the capture on the right interface on each PC, with the right protocol filter pre-loaded.
+- **Ping**, VPNLite swaps source/destination between the two PCs to measure round-trip in both directions.
+- **iPerf3**, VPNLite swaps client/server roles (see table above).
+- **Traceroute**, VPNLite runs it from each PC so the engineer can compare the forward and reverse paths.
+- **Wireshark capture**, VPNLite starts the capture on the right interface on each PC, with the right protocol filter pre-loaded.
 
 ---
 
 ## Features
 
-### 1. VPN Configuration — Site-to-Site & Client-to-Site
+### 1. VPN Configuration, Site-to-Site & Client-to-Site
 
 VPNLite supports **two deployment topologies** exposed through a single configuration wizard:
 
-- **Site-to-Site** — connects two remote networks (e.g. two branch offices) through a tunnel established between two gateways. Used for `GRE`, `IPSec` (Tunnel Mode), and `PPTP` server-to-server setups.
-- **Client-to-Site** — connects a single roaming client to an enterprise network through a gateway. Used for `L2TP/IPSec`, `L2TP/PPP/IPSec`, `PPPoE/PPP/IP`, `PPPoE/PPP/IPSec`, and `PPTP` client-to-server setups.
+- **Site-to-Site**, connects two remote networks (e.g. two branch offices) through a tunnel established between two gateways. Used for `GRE`, `IPSec` (Tunnel Mode), and `PPTP` server-to-server setups.
+- **Client-to-Site**, connects a single roaming client to an enterprise network through a gateway. Used for `L2TP/IPSec`, `L2TP/PPP/IPSec`, `PPPoE/PPP/IP`, `PPPoE/PPP/IPSec`, and `PPTP` client-to-server setups.
 
-The wizard collects all the parameters needed by each protocol stack — WAN IP, public/private router addresses, local IP, remote public IP, remote network CIDR, GRE tunnel IP, etc. — and validates them before any script is generated. An inline **About** panel explains every field inline (e.g. *"Local IP Address: an IP from your network that is not used by any computer or the router"*) so the engineer doesn't need to keep the protocol RFC open in another window.
+The wizard collects all the parameters needed by each protocol stack, WAN IP, public/private router addresses, local IP, remote public IP, remote network CIDR, GRE tunnel IP, etc., and validates them before any script is generated. An inline **About** panel explains every field inline (e.g. *"Local IP Address: an IP from your network that is not used by any computer or the router"*) so the engineer doesn't need to keep the protocol RFC open in another window.
 
-Because VPNLite is running on **both the Client PC and the Server PC**, the wizard also knows which side needs which piece of configuration. For example, for a PPTP Client-to-Site tunnel, VPNLite pushes `pptpd` server config to the Server PC and `pptp-linux` client config to the Client PC — both from the same form.
+Because VPNLite is running on **both the Client PC and the Server PC**, the wizard also knows which side needs which piece of configuration. For example, for a PPTP Client-to-Site tunnel, VPNLite pushes `pptpd` server config to the Server PC and `pptp-linux` client config to the Client PC, both from the same form.
 
 ### 2. VPN Protocol Stacks Supported
 
@@ -116,9 +116,9 @@ VPNLite ships with configuration templates and generated shell scripts for **six
 | **PPTP** | Client-to-Site or Site-to-Site | L2 (tunnel) | Legacy Microsoft Point-to-Point Tunneling Protocol. |
 | **GRE** | Site-to-Site | L3 (encapsulation) | Encapsulates multiple protocols; supports discontinuous subnets. |
 
-### 3. Automated Testing — Connectivity, Bandwidth, Capture
+### 3. Automated Testing, Connectivity, Bandwidth, Capture
 
-Once the tunnel is up, VPNLite drives the standard Linux network testing toolkit from the **same GUI** — and runs every test from **both** the Client PC and the Server PC so the engineer gets bidirectional results without having to swap roles by hand.
+Once the tunnel is up, VPNLite drives the standard Linux network testing toolkit from the **same GUI**, and runs every test from **both** the Client PC and the Server PC so the engineer gets bidirectional results without having to swap roles by hand.
 
 | Test | What it measures | How VPNLite handles direction |
 |---|---|---|
@@ -131,12 +131,12 @@ Once the tunnel is up, VPNLite drives the standard Linux network testing toolkit
 
 ### 4. Report Generation
 
-After the VPN is configured and the test suite has run, VPNLite **generates a detailed test report** consolidating all the results collected on both PCs — Ping latencies in both directions, iPerf3 throughput in both directions, traceroute paths, Wireshark capture summaries, and the parameters that were used to bring up the tunnel.
+After the VPN is configured and the test suite has run, VPNLite **generates a detailed test report** consolidating all the results collected on both PCs, Ping latencies in both directions, iPerf3 throughput in both directions, traceroute paths, Wireshark capture summaries, and the parameters that were used to bring up the tunnel.
 
 The engineer can:
 
 - **Export** the report in a portable format (e.g. PDF / HTML / CSV, depending on the export target selected in the UI).
-- **Drop it straight into their final report** to their manager — no manual copy-paste from terminal output, no reformatting of `iperf3` logs, no hand-drawn tables.
+- **Drop it straight into their final report** to their manager, no manual copy-paste from terminal output, no reformatting of `iperf3` logs, no hand-drawn tables.
 
 This was the original business case for the project: Sagemcom engineers were spending too much time writing up VPN test reports by hand after each validation campaign. VPNLite automates the writeup so the engineer can focus on the engineering, not the paperwork.
 
@@ -145,11 +145,11 @@ This was the original business case for the project: Sagemcom engineers were spe
 The UI is structured around a workflow that mirrors how a field engineer actually works:
 
 1. **Verify installed / uninstalled software** on both the Client PC and the Server PC.
-2. **Install / uninstall** the required packages (`ipsec`, `l2tp`, `ppp`, `pppoe`, `pptp`, `iperf3`, `wireshark`, `nmap`, `ethtool`, `traceroute`, …) — from the GUI.
+2. **Install / uninstall** the required packages (`ipsec`, `l2tp`, `ppp`, `pppoe`, `pptp`, `iperf3`, `wireshark`, `nmap`, `ethtool`, `traceroute`, …), from the GUI.
 3. **Configure the VPN** via the wizard (VPN protocol → network parameters → validate). VPNLite pushes the right config to the gateway, to the Client PC, and to the Server PC.
-4. **Stop / tear down** the VPN configuration if something needs to change — and redeploy in seconds.
-5. **Launch tests** (connectivity, bandwidth, capture) — VPNLite runs each test in both directions automatically.
-6. **Generate the report** — VPNLite consolidates every result into a single document the engineer can attach to their final report to their manager.
+4. **Stop / tear down** the VPN configuration if something needs to change, and redeploy in seconds.
+5. **Launch tests** (connectivity, bandwidth, capture), VPNLite runs each test in both directions automatically.
+6. **Generate the report**, VPNLite consolidates every result into a single document the engineer can attach to their final report to their manager.
 
 ---
 
@@ -189,14 +189,16 @@ VPNLite is fundamentally a **shell-script generator and orchestrator**. When the
 
 1. Collects every form field into a parameter set.
 2. Selects the appropriate protocol template (`gre.sh`, `pptp.sh`, `l2tp-ipsec.sh`, …).
-3. Substitutes the parameters into the template to produce a self-contained `#!/bin/sh` script (`set -ef`, `getopts`, case-based dispatch — classic sh dialect so it runs on busybox-Alpine or minimal Sagemcom gateway images).
+3. Substitutes the parameters into the template to produce a self-contained `#!/bin/sh` script (`set -ef`, `getopts`, case-based dispatch, classic sh dialect so it runs on busybox-Alpine or minimal Sagemcom gateway images).
 4. Writes the script to `/usr/local/bin/` on the gateway (and the matching client/server script on the corresponding PC).
 5. Runs the script as root, bringing the tunnel up.
-6. Optionally launches the test suite — running each test on the Client PC and the Server PC in turn, with Wireshark pre-loaded with the right capture filter for the active protocol.
+6. Optionally launches the test suite, running each test on the Client PC and the Server PC in turn, with Wireshark pre-loaded with the right capture filter for the active protocol.
 
 <p align="center">
-  <img src="vpnlite-gre-config-ui.png" alt="VPNLite — GRE Site-to-Site configuration wizard" width="720">
+  <img src="vpnlite-gre-config-ui.png" alt="VPNLite, GRE Site-to-Site configuration wizard" width="720">
 </p>
+
+![VPNLite, GRE Site-to-Site configuration wizard](screenshots/Page%20Configuration%20VPN%20-%20Lancement%20de%20configuration.png)
 
 <p align="center"><em>The GRE configuration wizard showing the West-Site / East-Site network topology and the inline validation panel.</em></p>
 
@@ -224,7 +226,7 @@ This is why Wireshark capture filters are protocol-specific: `gre` for GRE tunne
 | **IDE** | NetBeans |
 | **Target OS** | Linux (Client PC, Server PC, and Sagemcom gateway) |
 | **Privilege mode** | Root / Administrator (required for `/usr/local/bin` writes and tunnel bring-up) |
-| **Generated scripts** | POSIX shell (`#!/bin/sh` — runs on busybox/Alpine/minimal gateway images) |
+| **Generated scripts** | POSIX shell (`#!/bin/sh`, runs on busybox/Alpine/minimal gateway images) |
 | **External Linux tools orchestrated by the app** | `ipsec` / `strongSwan`, `xl2tpd`, `pppd`, `pppoe`, `pptpd` / `pptp-linux`, `iperf3`, `wireshark` / `tshark`, `nmap`, `ethtool`, `traceroute`, `ftp`, `snmp`, `dnsutils` |
 
 ---
@@ -309,27 +311,27 @@ VPNLite/
 └── LICENSE
 ```
 
-> ℹ️ The structure above reflects the typical NetBeans + JavaFX layout from 2017 and is provided as a guide. If your local copy differs (e.g. Maven `pom.xml` instead of `build.xml`, or a flat `src/` tree), adjust this section to match the actual repository layout before pushing to GitHub.
+> ℹ️ The structure above reflects the typical NetBeans + JavaFX layout from 2016 and is provided as a guide. If your local copy differs (e.g. Maven `pom.xml` instead of `build.xml`, or a flat `src/` tree), adjust this section to match the actual repository layout before pushing to GitHub.
 
 ---
 
 ## Prerequisites
 
-To build and run VPNLite today you'll need to recreate the 2017 toolchain:
+To build and run VPNLite today you'll need to recreate the 2016 toolchain:
 
-- **JDK 8** (OpenJDK 8 or Oracle JDK 8uXXXX). JavaFX is bundled with JDK 8 — later JDKs removed JavaFX from the core distribution and would require OpenJFX as a separate module.
+- **JDK 8** (OpenJDK 8 or Oracle JDK 8uXXXX). JavaFX is bundled with JDK 8, later JDKs removed JavaFX from the core distribution and would require OpenJFX as a separate module.
 - **NetBeans IDE 8.x** (or any IDE that can open a classic NetBeans `nbproject/` Ant project). IntelliJ IDEA and Eclipse can also import the project, but you'll lose the NetBeans-specific GUI builder (.fxml + controller wiring still works).
 - **Two Linux PCs** (or two Linux VMs on the same host):
-  - **Client PC** — connected to the Sagemcom gateway on its LAN side.
-  - **Server PC** — connected on the WAN side.
+  - **Client PC**, connected to the Sagemcom gateway on its LAN side.
+  - **Server PC**, connected on the WAN side.
 - **A Sagemcom gateway** running BusyBox-based Linux (or any Linux router you want to use as the tunnel endpoint).
-- **Root / sudo access** on both PCs and on the gateway — required for writing to `/usr/local/bin` and for bringing up tunnels.
+- **Root / sudo access** on both PCs and on the gateway, required for writing to `/usr/local/bin` and for bringing up tunnels.
 - **Linux networking tools** that VPNLite orchestrates (installed automatically via the *Packages Installation* page):
   - `ipsec` / strongSwan
   - `xl2tpd`, `pppd`, `pppoe`, `pptpd` (server) and `pptp-linux` (client)
   - `iperf3`, `wireshark` (or `tshark`), `nmap`, `ethtool`, `traceroute`
 
-> ⚠️ **Modern Linux note (2025+).** Some of these packages have been renamed, deprecated, or absorbed into other projects on recent distros. PPTP is considered cryptographically broken — do not deploy it in production. IPSec via `strongSwan` and WireGuard are the modern equivalents. VPNLite is preserved here as a 2017 artifact, not as a recommended production tool.
+> ⚠️ **Modern Linux note (2025+).** Some of these packages have been renamed, deprecated, or absorbed into other projects on recent distros. PPTP is considered cryptographically broken, do not deploy it in production. IPSec via `strongSwan` and WireGuard are the modern equivalents. VPNLite is preserved here as a 2016 artifact, not as a recommended production tool.
 
 ---
 
@@ -369,14 +371,10 @@ sudo java -jar dist/VPNLite.jar
 
 ### 5. Drive the wizard end-to-end
 
-1. **Main Page → Packages Installation** (on both PCs) — verify all required Linux tools are installed. Install the missing ones.
-2. **Main Page → VPN Configuration** — pick a protocol, fill in the network parameters, click **Validate**. VPNLite writes the shell script to `/usr/local/bin/` on the gateway and the matching client/server script on each PC.
-3. **Main Page → Networking Tests** — run Ping / iPerf3 / Wireshark against the live tunnel. VPNLite runs each test in **both** directions (Client → Server and Server → Client) automatically.
-4. **Main Page → Report** — generate the detailed test report and export it for your final writeup to your manager.
-
-<p align="center">
-  <img src="vpnlite-pptp-config-ui.png" alt="VPNLite — PPTP configuration wizard with topology diagram" width="720">
-</p>
+1. **Main Page → Packages Installation** (on both PCs), verify all required Linux tools are installed. Install the missing ones.
+2. **Main Page → VPN Configuration**, pick a protocol, fill in the network parameters, click **Validate**. VPNLite writes the shell script to `/usr/local/bin/` on the gateway and the matching client/server script on each PC.
+3. **Main Page → Networking Tests**, run Ping / iPerf3 / Wireshark against the live tunnel. VPNLite runs each test in **both** directions (Client → Server and Server → Client) automatically.
+4. **Main Page → Report**, generate the detailed test report and export it for your final writeup to your manager.
 
 <p align="center"><em>The PPTP configuration wizard with inline topology diagram and validation panel.</em></p>
 
@@ -386,7 +384,7 @@ sudo java -jar dist/VPNLite.jar
 
 | Screen | Description |
 |---|---|
-| Main Page | Entry menu — Packages Installation, VPN Configuration, Networking Tests, Report, Gateway Information. |
+| Main Page | Entry menu, Packages Installation, VPN Configuration, Networking Tests, Report, Gateway Information. |
 | Packages Installation | Probes both PCs and shows install status for iPerf3, Wireshark, NMAP, ethtool, traceroute, FTP, SNMP, DNSUtils. Install/uninstall from the UI. |
 | VPN Configuration Wizard | Protocol selector (GRE / PPTP / L2TP-IPSec / L2TP-PPP-IPSec / PPPoE-PPP-IP / PPPoE-PPP-IPSec), WAN IP, West-Site / East-Site parameters, inline topology diagram. Buttons: Stop / Validate / Back / Next. |
 | About Panel | Per-protocol help text explaining every field (e.g. for GRE: "Local IP Address: an IP from your network that is not used by any computer or the router"). |
@@ -398,7 +396,7 @@ sudo java -jar dist/VPNLite.jar
 
 ## Academic Context
 
-This project was the *Projet de Fin d'Études* (engineering final-year project) submitted in 2017 in partial fulfilment of the *Diplôme National d'Ingénieur* in Computer Science at **ESPIRT — École Supérieure Privée d'Ingénierie et de Technologies** (Tunisia), in industry partnership with **Sagemcom**.
+This project was the *Projet de Fin d'Études* (engineering final-year project) submitted in 2016 in partial fulfilment of the *Diplôme National d'Ingénieur* in Computer Science at **ESPIRT, École Supérieure Privée d'Ingénierie et de Technologies** (Tunisia), in industry partnership with **Sagemcom**.
 
 | Role | Name |
 |---|---|
@@ -412,39 +410,39 @@ The original project defense presentation (*« Étude, conception et réalisatio
 
 ## Retrospective (looking back from 2025)
 
-Building VPNLite in 2017 was a formative experience. A few things I'd do differently today:
+Building VPNLite in 2016 was a formative experience. A few things I'd do differently today:
 
 - **JavaFX → web frontend.** A JavaFX desktop app tied the operator to a workstation with a JVM; a small web UI (React + a Go/Rust backend) would let the engineer configure the bench from any browser. The shell-script generation logic itself stays the same.
-- **Template engine instead of string concatenation.** The 2017 version built shell scripts with manual `String.replace(...)`. A proper template engine (Thymeleaf, Mustache, Jinja-equivalent) would make the templates reviewable and testable in isolation.
-- **Idempotent deployment.** The original scripts were not strictly idempotent — re-running them could leave stale rules behind. Today I'd generate `systemd` units or use a config-management tool (Ansible) for declarative, idempotent deployment.
-- **WireGuard.** WireGuard was merged into the Linux kernel in 2020 and would replace most of the L2TP/IPSec and PPTP stacks with a single, simpler, faster protocol. PPTP in particular is now considered broken — its inclusion here is purely historical.
-- **Automated end-to-end tests for the app itself.** The 2017 version tested *VPN tunnels* but had no automated tests for the GUI or the script generator. Today I'd add TestFX for the UI and golden-file tests for the generated scripts.
+- **Template engine instead of string concatenation.** The 2016 version built shell scripts with manual `String.replace(...)`. A proper template engine (Thymeleaf, Mustache, Jinja-equivalent) would make the templates reviewable and testable in isolation.
+- **Idempotent deployment.** The original scripts were not strictly idempotent, re-running them could leave stale rules behind. Today I'd generate `systemd` units or use a config-management tool (Ansible) for declarative, idempotent deployment.
+- **WireGuard.** WireGuard was merged into the Linux kernel in 2020 and would replace most of the L2TP/IPSec and PPTP stacks with a single, simpler, faster protocol. PPTP in particular is now considered broken, its inclusion here is purely historical.
+- **Automated end-to-end tests for the app itself.** The 2016 version tested *VPN tunnels* but had no automated tests for the GUI or the script generator. Today I'd add TestFX for the UI and golden-file tests for the generated scripts.
 
-That said, the core design — *run on both ends of the tunnel, generate a shell script from a structured form, deploy it, run tests in both directions, export a single report* — still holds up. It's the same pattern Ansible, cloud-init, and modern network-automation tools use today, just packaged as a desktop app.
+That said, the core design, *run on both ends of the tunnel, generate a shell script from a structured form, deploy it, run tests in both directions, export a single report*, still holds up. It's the same pattern Ansible, cloud-init, and modern network-automation tools use today, just packaged as a desktop app.
 
 ---
 
 ## Limitations
 
-- **No longer maintained.** The codebase targets Java 1.8 and the 2017 Linux networking ecosystem. Some dependencies may not build cleanly on modern distros.
+- **No longer maintained.** The codebase targets Java 1.8 and the 2016 Linux networking ecosystem. Some dependencies may not build cleanly on modern distros.
 - **Linux-only.** The generated scripts are POSIX `sh` and rely on Linux networking tools; there is no Windows or macOS support.
 - **Two-PC bench required.** The application is designed to run on both the Client PC and the Server PC. Running it on only one PC limits the engineer to one-directional tests.
-- **PPTP included for historical completeness.** Do not deploy PPTP in production in 2025 — it is cryptographically broken ([CVE-1999-0434](https://nvd.nist.gov/vuln/detail/CVE-1999-0434) and many successors). Use IPSec, WireGuard, or OpenVPN instead.
+- **PPTP included for historical completeness.** Do not deploy PPTP in production in 2025, it is cryptographically broken ([CVE-1999-0434](https://nvd.nist.gov/vuln/detail/CVE-1999-0434) and many successors). Use IPSec, WireGuard, or OpenVPN instead.
 - **No encryption at the application layer.** VPNLite orchestrates VPN protocols; it does not implement them from scratch. Security depends entirely on the underlying Linux tools being correctly configured.
-- **Single-gateway scope.** The 2017 version managed one gateway at a time. Multi-gateway fleet management is out of scope.
+- **Single-gateway scope.** The 2016 version managed one gateway at a time. Multi-gateway fleet management is out of scope.
 
 ---
 
 ## License
 
-This project is released under the **MIT License** — see [LICENSE](LICENSE) for the full text.
+This project is released under the **MIT License**.
 
-The original 2017 project defense presentation (`VPNLite Presentation by Souhaieb Marzouk.pdf`) is © Souhaieb Marzouk and is included in this repository for archival and reference purposes.
+The original 2016 project defense presentation (`VPNLite Presentation by Souhaieb Marzouk.pdf`) is © Souhaieb Marzouk and is included in this repository for archival and reference purposes.
 
 ---
 
 ## Acknowledgements
 
-- **Sagemcom** — for hosting the project, providing the gateway hardware, and the industry supervision.
-- **ESPIRT** — École Supérieure Privée d'Ingénierie et de Technologies — for the academic framework and supervision.
+- **Sagemcom**, for hosting the project, providing the gateway hardware, and the industry supervision.
+- **ESPIRT**, École Supérieure Privée d'Ingénierie et de Technologies, for the academic framework and supervision.
 - The maintainers of the open-source Linux networking tools that VPNLite orchestrates: `strongSwan`, `xl2tpd`, `pppd`, `pppoe`, `pptpd`, `iperf3`, `Wireshark`, `nmap`, `ethtool`, `traceroute`.
