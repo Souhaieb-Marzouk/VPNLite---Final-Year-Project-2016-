@@ -11,6 +11,9 @@
   <em>Study, design and implementation of a portal for configuring and testing VPN protocols</em>
 </p>
 
+> ## Watch the full video from HERE:
+[![VPN Configuration - Performing Tests](https://img.youtube.com/vi/Q9maPnLTEmA/maxresdefault.jpg)](https://youtu.be/Q9maPnLTEmA)
+
 ---
 
 ## Overview
@@ -193,10 +196,6 @@ VPNLite is fundamentally a **shell-script generator and orchestrator**. When the
 4. Writes the script to `/usr/local/bin/` on the gateway (and the matching client/server script on the corresponding PC).
 5. Runs the script as root, bringing the tunnel up.
 6. Optionally launches the test suite, running each test on the Client PC and the Server PC in turn, with Wireshark pre-loaded with the right capture filter for the active protocol.
-
-<p align="center">
-  <img src="vpnlite-gre-config-ui.png" alt="VPNLite, GRE Site-to-Site configuration wizard" width="720">
-</p>
 
 ![VPNLite, GRE Site-to-Site configuration wizard](screenshots/Page%20Configuration%20VPN%20-%20Lancement%20de%20configuration.png)
 
